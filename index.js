@@ -9,6 +9,11 @@ function clickHandler() {
     const quantity = Number(stocksQuantity.value);
     const current = Number(currentPrice.value);
 
+    if (initial < 1 || quantity < 1 || current < 1) {
+        output.innerText = 'Please make sure to fill all values and values should be greater than 0.';
+        return
+    }
+
     calculateProfitAndLoss(initial, quantity, current);
 }
 
